@@ -569,6 +569,72 @@ export default function App() {
                   </div>
                 </div>
 
+                {/* Military Service Section */}
+                <div className={`${t.bgCard2} border-2 border-amber-500/40 rounded-3xl p-6 md:p-8 space-y-5 relative overflow-hidden`}>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+
+                  <div className={`flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b ${t.border}`}>
+                    <div>
+                      <div className="flex items-center gap-3 mb-1">
+                        <span className="text-3xl">🎖️</span>
+                        <h2 className={`text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-200 bg-clip-text text-transparent font-display`}>
+                          Military Service
+                        </h2>
+                      </div>
+                      <p className={`${t.textMuted} text-xs`}>Armed Forces of Egypt — Completed with Honor</p>
+                    </div>
+                    <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-emerald-400 font-bold text-xs font-mono">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>✅ Completed — Exempt</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div className={`${t.bgCard} border ${t.border} rounded-2xl p-4 flex flex-col gap-2 hover:border-amber-500/30 transition duration-300`}>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xl">🪖</span>
+                        <span className="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider">Status</span>
+                      </div>
+                      <p className={`font-bold text-sm ${t.text}`}>Completed Military Service</p>
+                      <p className={`text-xs ${t.textMuted} leading-relaxed`}>
+                        Fulfilled mandatory national service obligations with the Egyptian Armed Forces. Officially discharged and fully exempt from further service duties.
+                      </p>
+                    </div>
+
+                    <div className={`${t.bgCard} border ${t.border} rounded-2xl p-4 flex flex-col gap-2 hover:border-emerald-500/30 transition duration-300`}>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xl">⭐</span>
+                        <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">Qualities Gained</span>
+                      </div>
+                      <ul className={`text-xs ${t.textMuted2} space-y-1.5`}>
+                        <li className="flex items-center gap-1.5"><span className="text-emerald-400">✦</span> Discipline & Time Management</li>
+                        <li className="flex items-center gap-1.5"><span className="text-emerald-400">✦</span> Leadership & Teamwork</li>
+                        <li className="flex items-center gap-1.5"><span className="text-emerald-400">✦</span> Resilience Under Pressure</li>
+                        <li className="flex items-center gap-1.5"><span className="text-emerald-400">✦</span> Responsibility & Commitment</li>
+                      </ul>
+                    </div>
+
+                    <div className={`${t.bgCard} border ${t.border} rounded-2xl p-4 flex flex-col gap-2 hover:border-cyan-500/30 transition duration-300`}>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xl">📋</span>
+                        <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">Employment Impact</span>
+                      </div>
+                      <p className={`font-semibold text-sm text-cyan-300`}>No Obligations Remaining</p>
+                      <p className={`text-xs ${t.textMuted2} leading-relaxed`}>
+                        Eligible for full-time employment without any military scheduling conflicts. Available to commit 100% to professional teaching duties and institutional responsibilities.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className={`flex items-center gap-3 ${t.bgInput} rounded-xl p-3.5 border ${t.border} mt-2`}>
+                    <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
+                    <p className={`text-xs ${t.textMuted2} leading-relaxed`}>
+                      <span className="font-bold text-emerald-400">Military Service Completed & Exempt.</span> El-Sayed Saeed Qotb has fulfilled all national military obligations required by the Arab Republic of Egypt. Full documentation available upon institutional request.
+                    </p>
+                  </div>
+                </div>
+
                 {/* ICON Code Co-founders in portfolio */}
                 <div className={`${t.bgCard2} border ${t.border} rounded-3xl p-6 md:p-8 space-y-6`}>
                   <div className={`flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b ${t.border}`}>
