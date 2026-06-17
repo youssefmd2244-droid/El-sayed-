@@ -1,0 +1,16 @@
+{
+  "short_name": "Sayed Qotb",
+  "name": "El-Sayed Saeed Qotb - English Teacher",
+  "icons": [
+    {
+      "src": "/el_sayed_avatar.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0d1b2a",
+  "theme_color": "#00a8cc",
+  "display": "standalone",
+  "orientation": "portrait"
+}
