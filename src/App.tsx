@@ -29,7 +29,10 @@ import {
   UserCheck,
   Sun,
   Moon,
-  Contrast
+  Contrast,
+  GraduationCap,
+  Briefcase,
+  Shield
 } from "lucide-react";
 
 // Educator Information Consts
@@ -58,7 +61,7 @@ type ThemeMode = "dark" | "white" | "blue";
 
 export default function App() {
   const isOnline = useOnlineStatus();
-  const [activeTab, setActiveTab] = useState<"portfolio" | "iconcode">("portfolio");
+  const [activeTab, setActiveTab] = useState<"portfolio" | "iconcode" | "cv">("portfolio");
   const [storyStep, setStoryStep] = useState<number>(0);
   const [theme, setTheme] = useState<ThemeMode>("dark");
 
@@ -306,6 +309,17 @@ export default function App() {
           >
             <Code className="w-4 h-4" />
             <span>ICON CODE SYSTEMS</span>
+          </button>
+          <button
+            onClick={() => setActiveTab("cv")}
+            className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-350 ${
+              activeTab === "cv"
+                ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-slate-950 shadow-lg shadow-emerald-500/20"
+                : `${t.tabInactiveText} ${t.tabInactiveBg}`
+            }`}
+          >
+            <GraduationCap className="w-4 h-4" />
+            <span>CURRICULUM VITAE</span>
           </button>
         </div>
       </header>
@@ -896,6 +910,256 @@ export default function App() {
                   </motion.button>
                 </div>
 
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* TAB 3: CURRICULUM VITAE */}
+        <AnimatePresence mode="wait">
+          {activeTab === "cv" && (
+            <motion.div
+              key="cv-section"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4 }}
+              className="max-w-4xl mx-auto"
+            >
+              {/* CV Card */}
+              <div className={`${t.bgCard} border ${t.border} rounded-3xl overflow-hidden shadow-2xl`}>
+
+                {/* CV Top Bar */}
+                <div className="bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 px-8 py-3 flex items-center justify-between">
+                  <span className="text-slate-950 font-mono font-bold text-xs tracking-widest uppercase">📄 Official Curriculum Vitae</span>
+                  <span className="text-slate-950 font-mono text-xs">El-Sayed Saeed Qotb • 2026</span>
+                </div>
+
+                {/* CV Body — two column layout */}
+                <div className="grid grid-cols-1 md:grid-cols-3 min-h-[700px]">
+
+                  {/* ── LEFT SIDEBAR ── */}
+                  <div className="bg-gradient-to-b from-slate-900 to-slate-950 border-r border-slate-800 p-6 flex flex-col gap-6">
+
+                    {/* Photo */}
+                    <div className="flex flex-col items-center text-center">
+                      <div className="relative mb-4">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-400 rounded-full blur-sm opacity-75 animate-pulse" />
+                        <img
+                          src="/el_sayed_avatar.jpg"
+                          alt="El-Sayed Saeed Qotb"
+                          className="w-28 h-28 rounded-full object-cover border-4 border-slate-900 relative"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                      <h2 className="text-base font-bold text-amber-400 font-display leading-tight">El-Sayed Saeed Qotb</h2>
+                      <p className="text-cyan-400 text-[10px] tracking-widest uppercase font-mono mt-1">English Educator</p>
+                    </div>
+
+                    {/* Personal Info */}
+                    <div>
+                      <div className="text-[11px] font-bold text-amber-400 uppercase tracking-widest border-b border-slate-700 pb-2 mb-3 flex items-center gap-1.5">
+                        <span>👤</span> Personal Information
+                      </div>
+                      <div className="space-y-2.5">
+                        <div className="flex items-start gap-2.5 text-xs text-slate-300">
+                          <span className="text-base">🧑</span>
+                          <span><strong className="text-white">El-Sayed Saeed Qotb</strong></span>
+                        </div>
+                        <div className="flex items-start gap-2.5 text-xs text-slate-300">
+                          <span className="text-base">🎂</span>
+                          <span>Age: 27</span>
+                        </div>
+                        <div className="flex items-start gap-2.5 text-xs text-slate-300">
+                          <span className="text-base">📍</span>
+                          <span>Shibin El Qanater,<br/>Qalyubia, Egypt</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Core Skills */}
+                    <div>
+                      <div className="text-[11px] font-bold text-amber-400 uppercase tracking-widest border-b border-slate-700 pb-2 mb-3 flex items-center gap-1.5">
+                        <span>🛠️</span> Core Skills
+                      </div>
+
+                      {/* English bar */}
+                      <div className="mb-3">
+                        <div className="flex items-center gap-2 text-xs text-slate-300 mb-1.5">
+                          <span>🇬🇧</span> English Language
+                        </div>
+                        <div className="h-1.5 bg-slate-700 rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-gradient-to-r from-amber-500 to-yellow-400 rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "100%" }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1 }}
+                          />
+                        </div>
+                        <p className="text-[10px] text-amber-400 text-right mt-1 font-mono">Advanced / Mastery</p>
+                      </div>
+
+                      <div className="space-y-2">
+                        {[
+                          { icon: "🏆", label: "Educational Leadership" },
+                          { icon: "🖥️", label: "Educational Technology" },
+                          { icon: "🧠", label: "Educational Psychology" },
+                          { icon: "💬", label: "Communication Skills" },
+                          { icon: "😌", label: "Self-Learning" },
+                        ].map((s) => (
+                          <div key={s.label} className="flex items-center gap-2 text-xs text-slate-300">
+                            <span>{s.icon}</span> <span>{s.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Why Choose Me */}
+                    <div>
+                      <div className="text-[11px] font-bold text-amber-400 uppercase tracking-widest border-b border-slate-700 pb-2 mb-3 flex items-center gap-1.5">
+                        <span>🤔</span> Why Choose Me?
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed border-l-2 border-amber-500/50 pl-3">
+                        A detailed, dedicated, and professional English teacher with comprehensive classroom experience. Offers exceptional pedagogical skills, educational acumen, and in-depth knowledge of curriculum to deliver premium, tailored instruction.
+                      </p>
+                    </div>
+
+                    {/* Military Badge */}
+                    <div>
+                      <div className="text-[11px] font-bold text-amber-400 uppercase tracking-widest border-b border-slate-700 pb-2 mb-3 flex items-center gap-1.5">
+                        <span>🎖️</span> Military Service
+                      </div>
+                      <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 space-y-1.5">
+                        <div className="text-[10px] font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1">🇪🇬 Egyptian Armed Forces</div>
+                        <div className="text-xs text-emerald-400 font-semibold flex items-center gap-1.5">✅ Completed &amp; Exempt</div>
+                        <p className="text-[11px] text-slate-400 leading-relaxed">All obligations fulfilled. Available for full-time employment immediately.</p>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* ── RIGHT MAIN ── */}
+                  <div className={`md:col-span-2 ${t.bgCard} p-6 md:p-8 flex flex-col gap-6`}>
+
+                    {/* Title */}
+                    <div>
+                      <p className="font-serif italic text-3xl font-black text-amber-400">Curriculum Vitae</p>
+                      <p className="text-xl font-bold text-white mt-0.5">El-Sayed Saeed Qotb</p>
+                    </div>
+
+                    {/* Professional Summary */}
+                    <div>
+                      <div className={`text-sm font-bold ${t.text} border-b border-amber-500/40 pb-2 mb-3 flex items-center gap-2`}>
+                        🏆 Professional Summary
+                      </div>
+                      <p className={`text-sm ${t.textMuted2} leading-relaxed`}>
+                        <strong className={t.text}>In 27 years, dedicated and professional English Teacher with over 6 years practical experience.</strong>{" "}
+                        Innovative teaching style, content creation, classroom management, superior motivating capability,
+                        exceptional English communication skills. Perfect for educational institutions striving for excellence.
+                      </p>
+                    </div>
+
+                    {/* Academic Qualifications */}
+                    <div>
+                      <div className={`text-sm font-bold ${t.text} border-b border-amber-500/40 pb-2 mb-3 flex items-center gap-2`}>
+                        🎓 Academic Qualifications
+                      </div>
+                      <p className={`text-sm ${t.textMuted2} leading-relaxed`}>
+                        <strong className={t.text}>Bachelor of Education</strong> – Department of Psychology.
+                        Strong background in educational psychology.
+                      </p>
+                    </div>
+
+                    {/* Professional Experience */}
+                    <div>
+                      <div className={`text-sm font-bold ${t.text} border-b border-amber-500/40 pb-2 mb-3 flex items-center gap-2`}>
+                        ⭐ Professional Experience
+                      </div>
+                      <p className={`text-xs font-bold ${t.textMuted} mb-4`}>(6 Years of Excellence)</p>
+
+                      {/* Role 1 */}
+                      <div className="relative pl-5 border-l-2 border-amber-500/40 mb-5">
+                        <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-amber-500" />
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className={`text-sm font-bold ${t.text}`}>🏫 English Language Teacher</span>
+                          <span className="text-[10px] bg-amber-500 text-slate-950 font-bold px-2.5 py-0.5 rounded-full font-mono">Al-Yasmine School</span>
+                        </div>
+                        <ul className={`space-y-1 text-xs ${t.textMuted2}`}>
+                          {["Comprehensive lesson plans,", "interactive teaching,", "classroom environment management,", "performance reports."].map(i => (
+                            <li key={i} className="flex items-start gap-2"><span className="text-amber-500 mt-0.5">•</span>{i}</li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Role 2 */}
+                      <div className="relative pl-5 border-l-2 border-cyan-500/40">
+                        <div className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-cyan-500" />
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className={`text-sm font-bold ${t.text}`}>🏠 English Language Teacher</span>
+                          <span className="text-[10px] bg-cyan-500 text-slate-950 font-bold px-2.5 py-0.5 rounded-full font-mono">Private Tutoring &amp; Academic Guidance</span>
+                        </div>
+                        <ul className={`space-y-1 text-xs ${t.textMuted2}`}>
+                          {["Training curricula, academic mentor,", "digital tools and online resources;", "personalized learning strategies;", "proven outstanding results."].map(i => (
+                            <li key={i} className="flex items-start gap-2"><span className="text-cyan-400 mt-0.5">•</span>{i}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Military Service Full */}
+                    <div>
+                      <div className={`text-sm font-bold ${t.text} border-b border-amber-500/40 pb-2 mb-3 flex items-center gap-2`}>
+                        🎖️ Military Service
+                      </div>
+                      <div className="bg-emerald-950/40 border border-emerald-800/50 rounded-2xl p-4 space-y-3">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-bold px-3 py-1 rounded-full">✅ Completed — Officially Exempt</span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div className={`${t.bgCard} rounded-xl p-3 border ${t.border}`}>
+                            <p className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1.5">🪖 Service Status</p>
+                            <p className={`text-xs ${t.textMuted2} leading-relaxed`}><strong className={t.text}>Completed Military Service.</strong> Fulfilled all mandatory national obligations with the Egyptian Armed Forces. Officially discharged and fully exempt.</p>
+                          </div>
+                          <div className={`${t.bgCard} rounded-xl p-3 border ${t.border}`}>
+                            <p className="text-[10px] font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1.5">⭐ Qualities Gained</p>
+                            <div className={`text-xs ${t.textMuted2} space-y-1`}>
+                              {["✦ Discipline & Time Management", "✦ Leadership & Teamwork", "✦ Resilience Under Pressure", "✦ Responsibility & Commitment"].map(q => (
+                                <div key={q}>{q}</div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                        <div className={`${t.bgCard} rounded-xl p-3 border ${t.border} flex items-start gap-2.5`}>
+                          <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                          <p className={`text-xs ${t.textMuted2} leading-relaxed`}>
+                            <strong className="text-emerald-400">No Remaining Obligations.</strong> Eligible for immediate full-time employment. Available to commit 100% to professional duties. Full documentation available upon institutional request.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Contact Footer */}
+                    <div className={`border-t ${t.border} pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3`}>
+                      <div>
+                        <p className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-1">📞 Contact Details</p>
+                        <p className={`text-xs ${t.textMuted2} flex items-center gap-1.5`}><span>📱</span> +20 10 33130510</p>
+                        <p className={`text-xs ${t.textMuted2} flex items-center gap-1.5 mt-1`}><span>✉️</span> el-sayed.qotb@email.com</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-1">🤝 References</p>
+                        <p className={`text-xs ${t.textMuted2}`}>📄 Available upon request.</p>
+                      </div>
+                      <div>
+                        <p className="text-[10px] font-mono font-bold text-amber-400 uppercase tracking-wider mb-2 flex items-center gap-1">🔗 Professional Links</p>
+                        <a href="https://linkedin.com/in/elsayed-qotb" target="_blank" rel="noreferrer" className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+                          <span>💼</span> LinkedIn/in/elsayed-qotb
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
