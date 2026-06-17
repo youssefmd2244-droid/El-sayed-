@@ -572,15 +572,26 @@ export default function App() {
                 {/* ICON Code Co-founders in portfolio */}
                 <div className={`${t.bgCard2} border ${t.border} rounded-3xl p-6 md:p-8 space-y-6`}>
                   <div className={`flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b ${t.border}`}>
-                    <div>
-                      <div className="inline-flex items-center gap-1.5 bg-cyan-950/40 border border-cyan-800/40 px-3 py-1 rounded-full text-cyan-400 font-mono font-bold text-[10px] mb-2 animate-pulse">
-                        <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping" />
-                        <span>TECHNOLOGY PARTNERS 🚀</span>
+                    <div className="flex items-center gap-4">
+                      <div className="relative w-14 h-14 shrink-0 hover:scale-125 transition-transform duration-500">
+                        <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-[#00a8cc] to-emerald-500 rounded-full blur opacity-80 animate-pulse-glow" />
+                        <img
+                          src="/icon_code_logo.jpg"
+                          alt="ICON Code Brand Logo"
+                          className="w-14 h-14 rounded-full object-cover relative border-2 border-slate-900 animate-spin-slow"
+                          referrerPolicy="no-referrer"
+                        />
                       </div>
-                      <h2 className={`text-xl md:text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent font-display`}>
-                        ICON CODE SYSTEMS
-                      </h2>
-                      <p className={`${t.textMuted} text-xs`}>The expert development and design powers behind this digital suite</p>
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 bg-cyan-950/40 border border-cyan-800/40 px-3 py-1 rounded-full text-cyan-400 font-mono font-bold text-[10px] mb-2 animate-pulse">
+                          <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-ping" />
+                          <span>TECHNOLOGY PARTNERS 🚀</span>
+                        </div>
+                        <h2 className={`text-xl md:text-2xl font-bold bg-gradient-to-r from-slate-100 to-slate-400 bg-clip-text text-transparent font-display`}>
+                          ICON CODE SYSTEMS
+                        </h2>
+                        <p className={`${t.textMuted} text-xs`}>The expert development and design powers behind this digital suite</p>
+                      </div>
                     </div>
                     <span className="px-2.5 py-1 text-[10px] bg-cyan-950/50 border border-cyan-850 rounded-full text-cyan-400 font-mono">
                       Founded 2023 ☄️
@@ -597,6 +608,15 @@ export default function App() {
                       {/* Youssef */}
                       <div className={`${t.founderCardBg} border ${t.founderBorder} p-4 rounded-2xl flex flex-col justify-between space-y-4 group hover:border-cyan-500/30 transition duration-300`}>
                         <div>
+                          <div className="relative w-16 h-16 mb-3 hover:scale-125 transition-transform duration-500">
+                            <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-amber-400 rounded-full blur opacity-80 animate-blink-light" />
+                            <img
+                              src="/yousef_avatar.jpg"
+                              alt="Eng. Youssef Mohamed El-Sayed Mohamed"
+                              className="w-16 h-16 rounded-full object-cover object-top relative border-2 border-slate-900 animate-spin-slow"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
                           <span className="text-[9px] font-mono tracking-widest text-[#00a8cc] uppercase">CHIEF EXECUTIVE FOUNDER</span>
                           <h5 className={`font-bold text-sm ${t.text} group-hover:text-cyan-300 transition duration-300 mt-0.5`}>
                             Eng. Youssef Mohamed El-Sayed Mohamed
@@ -622,6 +642,15 @@ export default function App() {
                       {/* Omar */}
                       <div className={`${t.founderCardBg} border ${t.founderBorder} p-4 rounded-2xl flex flex-col justify-between space-y-4 group hover:border-cyan-500/30 transition duration-300`}>
                         <div>
+                          <div className="relative w-16 h-16 mb-3 hover:scale-125 transition-transform duration-500">
+                            <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 to-amber-400 rounded-full blur opacity-80 animate-blink-light" />
+                            <img
+                              src="/omar_avatar.jpg"
+                              alt="Eng. Omar Mohamed El-Sayed Mohamed"
+                              className="w-16 h-16 rounded-full object-cover object-top relative border-2 border-slate-900 animate-spin-slow"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
                           <span className="text-[9px] font-mono tracking-widest text-[#00a8cc] uppercase">CHIEF TECHNOLOGY OFFICER</span>
                           <h5 className={`font-bold text-sm ${t.text} group-hover:text-cyan-300 transition duration-300 mt-0.5`}>
                             Eng. Omar Mohamed El-Sayed Mohamed
@@ -694,12 +723,12 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="relative group">
+                  <div className="relative group hover:scale-110 transition-transform duration-500">
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-[#00a8cc] to-emerald-500 rounded-full blur-xl opacity-80 group-hover:opacity-100 transition duration-1000 animate-pulse-glow" />
                     <img
-                      src="/src/assets/images/icon_code_logo_1781660499607.jpg"
+                      src="/icon_code_logo.jpg"
                       alt="ICON Code Brand Logo"
-                      className="w-56 h-56 rounded-full object-cover relative border-4 border-slate-900"
+                      className="w-56 h-56 rounded-full object-cover relative border-4 border-slate-900 animate-spin-slow"
                       referrerPolicy="no-referrer"
                     />
                   </div>
@@ -736,12 +765,21 @@ export default function App() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   {[
-                    { role: "CHIEF EXECUTIVE FOUNDER", name: "Eng. Youssef Mohamed El-Sayed Mohamed", title: "Co-Founder, Chief Applications Architect", phone: "+201094555299", wa: "201094555299", icon: "🛠️" },
-                    { role: "CHIEF TECHNOLOGY OFFICER", name: "Eng. Omar Mohamed El-Sayed Mohamed", title: "Co-Founder, Systems Infrastructure Director", phone: "+201102293350", wa: "201102293350", icon: "⚙️" },
+                    { role: "CHIEF EXECUTIVE FOUNDER", name: "Eng. Youssef Mohamed El-Sayed Mohamed", title: "Co-Founder, Chief Applications Architect", phone: "+201094555299", wa: "201094555299", icon: "🛠️", photo: "/yousef_avatar.jpg" },
+                    { role: "CHIEF TECHNOLOGY OFFICER", name: "Eng. Omar Mohamed El-Sayed Mohamed", title: "Co-Founder, Systems Infrastructure Director", phone: "+201102293350", wa: "201102293350", icon: "⚙️", photo: "/omar_avatar.jpg" },
                   ].map((f) => (
                     <div key={f.name} className={`${t.iconCodeCardBg} rounded-3xl p-6 border-2 border-cyan-500/20 hover:border-cyan-500/40 transition duration-350 relative overflow-hidden flex flex-col justify-between group`}>
                       <div className={`absolute top-0 right-0 w-12 h-12 bg-cyan-500/10 rounded-bl-3xl border-l border-b border-cyan-500/10 flex items-center justify-center text-lg animate-pulse`}>{f.icon}</div>
                       <div>
+                        <div className="relative w-20 h-20 mb-4 hover:scale-125 transition-transform duration-500">
+                          <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-amber-400 rounded-full blur opacity-80 animate-blink-light" />
+                          <img
+                            src={f.photo}
+                            alt={f.name}
+                            className="w-20 h-20 rounded-full object-cover object-top relative border-2 border-slate-900 animate-spin-slow"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
                         <h4 className="text-[11px] font-mono tracking-widest text-[#00a8cc] uppercase">{f.role}</h4>
                         <h3 className={`text-xl font-bold ${t.text} group-hover:text-cyan-300 transition duration-350 font-display mt-1`}>{f.name}</h3>
                         <p className={`text-xs ${t.textMuted} mt-1 italic`}>{f.title}</p>
